@@ -1,0 +1,15 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - gem install serverspec
+  override:
+    - docker info
+    - docker version
+    - docker build -t soh335/circleci-dockerfile-serverspec .
+
+test:
+  override:
+    - DOCKER_IMAGE=soh335/circleci-dockerfile-serverspec:latest rake spec
