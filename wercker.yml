@@ -4,8 +4,9 @@ build:
     - install-packages:
         packages: ruby2.0
     - script:
+        name: gem
         code: |
-          gem install serverspec docker-api --no-ri --no-rdoc
+          sudo gem install serverspec docker-api --no-ri --no-rdoc
     - script:
         name: docker version
         code: docker version
