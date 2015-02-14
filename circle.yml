@@ -4,7 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - gem install serverspec
+    - gem install serverspec docker-api --no-ri --no-rdoc
   override:
     - docker info
     - docker version
