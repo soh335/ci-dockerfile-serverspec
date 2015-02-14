@@ -2,7 +2,7 @@ box: wercker-labs/docker
 build:
   steps:
     - install-packages:
-        packages: ruby2.0 build-essential
+        packages: ruby2.0 ruby2.0-dev build-essential
     - script:
         name: gem
         code: |
