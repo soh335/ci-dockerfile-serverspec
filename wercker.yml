@@ -6,7 +6,7 @@ build:
     - script:
         name: gem
         code: |
-          sudo gem install serverspec docker-api --no-ri --no-rdoc
+          sudo gem install serverspec docker-api rake --no-ri --no-rdoc
     - script:
         name: docker version
         code: docker version
