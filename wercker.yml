@@ -1,0 +1,17 @@
+box: wercker-labs/docker
+build:
+  steps:
+    - install-packages:
+        packages: ruby2.0
+    - script:
+        code: |
+          gem install serverspec docker-api --no-ri --no-rdoc
+    - script:
+        name: docker version
+        code: docker version
+    - script:
+        name: docker build
+        code: docker build -t soh335/circleci-dockerfile-serverspec .
+    - script:
+        name: rake spec
+        code: DOCKER_IMAGE=soh335/circleci-dockerfile-serverspec:latest rake spec
